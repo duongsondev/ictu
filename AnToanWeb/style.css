@@ -1,0 +1,45 @@
+
+body{
+    width: 960px;
+    margin: 0 auto;
+}
+.comments{
+    margin: 10px;
+    clear: both;
+    border-left: 1px solid #999;
+}
+.cmt-left{
+    float: left;
+    padding: 10px;
+}
+.avt{
+    background-color: #555;
+    padding: 20px;
+    color: white;
+}
+h1{
+    border-left: 5px solid green;
+    border-bottom: 1px solid green;
+    padding: 0px 10px;
+}
+h2{
+    border-left: 5px solid green;
+    padding: 0px 10px;
+}
+.author,.avt,.title{
+    font-weight: bold;
+}
+label{
+    width: 70px;
+    display: inline-block;
+}
+.line{
+    margin: 10px 0px;
+}
+input[type="text"]{
+    width: 200px;
+    padding: 10px;
+}
+input[type="submit"]{
+    padding: 10px 30px;
+}
