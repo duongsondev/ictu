@@ -15,5 +15,10 @@
             $rs = $this->conn->query($sql);
             return $rs;
         }
+        public function insertComments($title, $content, $author){
+            $sql = "INSERT INTO comment VALUES(NULL,'$title','$content','$author')";
+            $rs = $this->conn->query($sql);
+            return $rs;
+        }
     }
 ?>
