@@ -28,5 +28,19 @@
             $rs = $this->conn->query($sql);
             return $rs->num_rows > 0;
         }
+        // Lấy danh sách book
+        public function getBooks()
+        {
+            $sql = "SELECT * FROM book";
+            $rs = $this->conn->query($sql);
+            return $rs;
+        }
+        // Tìm kiếm sách theo tên
+        public function searchBooks($name)
+        {
+            $sql = "SELECT * FROM book WHERE name LIKE '%$name%'";
+            $rs = $this->conn->query($sql);
+            return $rs;
+        }
     }
 ?>

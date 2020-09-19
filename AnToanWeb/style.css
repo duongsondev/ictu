@@ -3,7 +3,7 @@ body{
     width: 960px;
     margin: 0 auto;
 }
-.comments{
+.comments,.book{
     margin: 10px;
     padding: 0px 10px;
     border-left: 1px solid #999;
@@ -17,7 +17,7 @@ h2{
     border-left: 5px solid green;
     padding: 0px 10px;
 }
-.author,.title{
+.author,.title,.name,.error,.result{
     font-weight: bold;
 }
 label{
@@ -36,5 +36,12 @@ input[type="submit"]{
 }
 .error{
     color: red;
+    padding: 10px 5px;
+}
+.price{
+    color: red;
+}
+.result{
+    color: green;
     padding: 10px 5px;
 }
