@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2020 at 08:21 AM
+-- Generation Time: Sep 19, 2020 at 03:43 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -34,6 +34,13 @@ CREATE TABLE `account` (
   `full_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `account`
+--
+
+INSERT INTO `account` (`id`, `username`, `password`, `full_name`) VALUES
+(1, 'admin', 'admin', 'DSD');
+
 -- --------------------------------------------------------
 
 --
@@ -42,9 +49,9 @@ CREATE TABLE `account` (
 
 CREATE TABLE `comment` (
   `id` int(11) NOT NULL,
-  `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `content` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `author` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `author` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -52,7 +59,7 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id`, `title`, `content`, `author`) VALUES
-(1, 'Title 1', 'Connent 1', 'DSD'),
+(1, 'Title 1', 'Connent 1', ''),
 (2, 'Title 2', 'Vàng không chỉ là một món đồ trang sức, chúng còn có thể trở thành vũ khí chống lại ung thư. Trong một nghiên cứu mới đăng trên tạp chí Nature Communi', 'DSD');
 
 --
@@ -79,13 +86,13 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
