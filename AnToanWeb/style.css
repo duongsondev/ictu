@@ -21,16 +21,20 @@ h2{
     font-weight: bold;
 }
 label{
-    width: 70px;
+    width: 100px;
     display: inline-block;
 }
 .line{
     margin: 10px 0px;
 }
-input[type="text"]{
+input[type="text"],input[type="password"]{
     width: 200px;
     padding: 10px;
 }
 input[type="submit"]{
     padding: 10px 30px;
+}
+.error{
+    color: red;
+    padding: 10px 5px;
 }

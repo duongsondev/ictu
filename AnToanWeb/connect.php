@@ -9,16 +9,24 @@
             $this->conn = new mysqli($host, $user, $pass, $database);
             mysqli_set_charset($this->conn, "utf8");
         }
+        // Lấy danh sách bình luận
         public function getComments()
         {
-            $sql = "select * from comment";
+            $sql = "SELECT * FROM comment";
             $rs = $this->conn->query($sql);
             return $rs;
         }
+        // Thêm bình luận
         public function insertComments($title, $content, $author){
             $sql = "INSERT INTO comment VALUES(NULL,'$title','$content','$author')";
             $rs = $this->conn->query($sql);
             return $rs;
+        }
+        // Đăng nhập
+        public function login($username, $password){
+            $sql = "SELECT * FROM account WHERE username='".$username."' AND password='".$password."'";
+            $rs = $this->conn->query($sql);
+            return $rs->num_rows > 0;
         }
     }
 ?>
