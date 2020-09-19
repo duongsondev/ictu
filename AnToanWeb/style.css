@@ -17,7 +17,7 @@ h2{
     border-left: 5px solid green;
     padding: 0px 10px;
 }
-.author,.title,.name,.error,.result{
+.author,.title,.name,.error,.result,a{
     font-weight: bold;
 }
 label{
@@ -44,4 +44,11 @@ input[type="submit"]{
 .result{
     color: green;
     padding: 10px 5px;
+}
+a{
+    text-decoration: none;
+}
+p>span{
+    color: black;
+    font-weight: normal;
 }

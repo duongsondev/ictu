@@ -42,5 +42,12 @@
             $rs = $this->conn->query($sql);
             return $rs;
         }
+        // Lấy sách theo ID
+        public function getBookById($id)
+        {
+            $sql = "SELECT * FROM book WHERE id = $id";
+            $rs = $this->conn->query($sql);
+            return $rs;
+        }
     }
 ?>

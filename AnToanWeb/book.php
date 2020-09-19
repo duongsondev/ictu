@@ -4,7 +4,7 @@
     $books = null;
     if(isset($_GET["search"])){
         $seacrh = trim($_GET["search"]);
-        $books = $db->searchBooks(trim($_GET["search"]));
+        $books = $db->searchBooks($seacrh);
     }else{
         $books = $db->getBooks();
     }
@@ -37,6 +37,7 @@
             <p class="name"><?php echo trim($book["name"])?></p>
             <p class="author"><?php echo trim($book["author"])?></p>
             <p class="price">$<?php echo trim($book["price"])?></p>
+            <a href="bookview.php?id=<?php echo $book["id"] ?>">Xem chi tiết</a>
         </div>
     <?php }?>
 </body>
