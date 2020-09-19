@@ -30,7 +30,9 @@
         </div>
     </form>
     <?php if(isset($_GET["search"]))
-        echo "<p class='result'>Kết quả cho \"$seacrh\"</p>";
+        // Xử lý lỗi, kiểm tra và mã hóa kí tự đặc biệt
+        // echo "<p class='result'>Kết quả cho \"".htmlentities($seacrh)."\"</p>";
+         echo "<p class='result'>Kết quả cho \"$seacrh\"</p>";
         while($book = $books->fetch_assoc()){
     ?>
         <div class="book">

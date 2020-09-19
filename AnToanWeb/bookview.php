@@ -1,7 +1,7 @@
 <?php 
     include("connect.php");
     $db = new Connect();
-    $books = null;
+    $book = null;
     if(isset($_GET["id"])){
         $id = trim($_GET["id"]);
         $book = $db->getBookById($id)->fetch_assoc();

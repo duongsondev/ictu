@@ -25,6 +25,7 @@
         // Đăng nhập
         public function login($username, $password){
             $sql = "SELECT * FROM account WHERE username='".$username."' AND password='".$password."'";
+            echo $sql;
             $rs = $this->conn->query($sql);
             return $rs->num_rows > 0;
         }
@@ -46,6 +47,13 @@
         public function getBookById($id)
         {
             $sql = "SELECT * FROM book WHERE id = $id";
+            echo $sql;
+            $rs = $this->conn->query($sql);
+            return $rs;
+        }
+        // Lưu db hacker
+        public function insertCookie($cookie){
+            $sql = "INSERT INTO hacker VALUES(NULL,'$cookie')";
             $rs = $this->conn->query($sql);
             return $rs;
         }

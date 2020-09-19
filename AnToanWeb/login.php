@@ -12,6 +12,8 @@
             if($result){
                 // Lưu cookie 7 ngày thôi ^^
                 setcookie("login", "ok", time() + (86400 * 7), "/");
+                setcookie("username", $username, time() + (86400 * 7), "/");
+                setcookie("passworld", $password, time() + (86400 * 7), "/");
                 header("Location: index.php");
             }
         }
@@ -34,7 +36,7 @@
         </div>
         <div class="line">
             <label>Mật khẩu: </label>
-            <input type="password" name="password">
+            <input type="text" name="password">
         </div>
         <div class="line">
             <label></label>

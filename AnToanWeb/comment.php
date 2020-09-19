@@ -5,6 +5,10 @@
     //var_dump($db);
     if(isset($_POST["content"])){
         $content = trim($_POST["content"]);
+
+        /* Xử lý trước khi thêm vào cơ sở dữ liệu */
+        //$content = htmlentities($content);
+        
         if(empty($content)){
             echo "Nội dung rỗng!!!";
         }else{
@@ -27,9 +31,11 @@
 <body>
     <h1>Bình luận</h1>
     <?php while($cmt = $comments->fetch_assoc()){?>
+        <!-- Xử lý trước khi hiển thị sử dụng hàm htmlentities()-->
         <div class="comments">
             <p class="author"><?php echo trim($cmt["author"])?></p>
             <p class="title"><?php echo trim($cmt["title"])?></p>
+            <!-- <p class="content"><?php echo htmlentities(trim($cmt["content"]))?></p> -->
             <p class="content"><?php echo trim($cmt["content"])?></p>
         </div>
     <?php }?>

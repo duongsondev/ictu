@@ -20,6 +20,10 @@
 </head>
 <body>
     <h1>HOME</h1>
+    <a href="comment.php">Bình luận</a>
+    <br><br>
+    <a href="book.php">Xem sách</a>
+    <br><br>
     <form action="index.php" method="post">
         <input type="text" name="logout" value="logout" hidden >
         <input type="submit" value="Đăng xuất">

