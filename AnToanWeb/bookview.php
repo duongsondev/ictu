@@ -30,6 +30,7 @@
             echo "<p class='error'>Sách gì đây???</p>";
         }
     ?>
-    <a href="book.php">Tất cả sách</a>
+    <a href="book.php">Tất cả sách</a><br><br>
+    <a href="index.php">GO HOME</a>
 </body>
 </html>

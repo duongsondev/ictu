@@ -5,6 +5,7 @@
     if(isset($_GET["search"])){
         $seacrh = trim($_GET["search"]);
         $books = $db->searchBooks($seacrh);
+        
     }else{
         $books = $db->getBooks();
     }
@@ -29,10 +30,12 @@
             <input type="submit" value="Tìm kiếm">
         </div>
     </form>
-    <?php if(isset($_GET["search"]))
+    <?php if(isset($_GET["search"])){
         // Xử lý lỗi, kiểm tra và mã hóa kí tự đặc biệt
         // echo "<p class='result'>Kết quả cho \"".htmlentities($seacrh)."\"</p>";
+        // echo "<p class='result'>Kết quả cho \"".urlencode($seacrh)."\"</p>";
          echo "<p class='result'>Kết quả cho \"$seacrh\"</p>";
+        }
         while($book = $books->fetch_assoc()){
     ?>
         <div class="book">
@@ -41,6 +44,7 @@
             <p class="price">$<?php echo trim($book["price"])?></p>
             <a href="bookview.php?id=<?php echo $book["id"] ?>">Xem chi tiết</a>
         </div>
-    <?php }?>
+    <?php }?>   
+    <a href="index.php">GO HOME</a>
 </body>
 </html>

@@ -7,8 +7,16 @@
         $content = trim($_POST["content"]);
 
         /* Xử lý trước khi thêm vào cơ sở dữ liệu */
-        //$content = htmlentities($content);
+        $content = htmlentities($content);
         
+        //Bắt lỗi, không lưu db
+
+        // $temp = htmlentities($content);
+        // if($temp != $content){
+        //     echo "<p class='error'>Phát hiện XSS</p>";
+        //     return;
+        // }
+        //
         if(empty($content)){
             echo "Nội dung rỗng!!!";
         }else{
@@ -35,7 +43,9 @@
         <div class="comments">
             <p class="author"><?php echo trim($cmt["author"])?></p>
             <p class="title"><?php echo trim($cmt["title"])?></p>
+            <!-- htmlspecialchars() -->
             <!-- <p class="content"><?php echo htmlentities(trim($cmt["content"]))?></p> -->
+            <!-- <p class="content"><?php echo htmlspecialchars(trim($cmt["content"]))?></p> -->
             <p class="content"><?php echo trim($cmt["content"])?></p>
         </div>
     <?php }?>
@@ -60,5 +70,6 @@
         </div>
     </form>
     </div>
+    <a href="index.php">GO HOME</a>
 </body>
 </html>

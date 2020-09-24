@@ -18,14 +18,28 @@
         }
         // Thêm bình luận
         public function insertComments($title, $content, $author){
+            // phong chong sql injection
+            // $titleSafe = mysqli_real_escape_string($this->conn,$title);
+            // $contentSafe = mysqli_real_escape_string($this->conn,$contentSafe);
+            // $authorSafe = mysqli_real_escape_string($this->conn,$authorSafe);
+            // $sql = "INSERT INTO comment VALUES(NULL,'$titleSafe','$contentSafe','$authorSafe')";
+
+            // bi lo hong sql injection
             $sql = "INSERT INTO comment VALUES(NULL,'$title','$content','$author')";
             $rs = $this->conn->query($sql);
             return $rs;
         }
         // Đăng nhập
         public function login($username, $password){
+            // phong chong sql injection
+            // $usernameSafe = mysqli_real_escape_string($this->conn,$username);
+            // $passwordSafe = mysqli_real_escape_string($this->conn,$password);
+            // $sql = "SELECT * FROM account WHERE username='".$usernameSafe."' AND password='".$passwordSafe."'";
+
+            // bi lo hong sql injection
             $sql = "SELECT * FROM account WHERE username='".$username."' AND password='".$password."'";
-            echo $sql;
+           // echo $sql;
+            //return;
             $rs = $this->conn->query($sql);
             return $rs->num_rows > 0;
         }
@@ -39,6 +53,11 @@
         // Tìm kiếm sách theo tên
         public function searchBooks($name)
         {
+            // phong chong sql injection
+            // $nameSafe = mysqli_real_escape_string($this->conn,$name);
+            // $sql = "SELECT * FROM book WHERE name LIKE '%$nameSafe%'";
+
+            // bi lo hong sql injection
             $sql = "SELECT * FROM book WHERE name LIKE '%$name%'";
             $rs = $this->conn->query($sql);
             return $rs;
@@ -46,8 +65,13 @@
         // Lấy sách theo ID
         public function getBookById($id)
         {
+            // phong chong sql injection
+            // $idSafe = mysqli_real_escape_string($this->conn,$id);
+            // $sql = "SELECT * FROM book WHERE id = $idSafe";
+
+            // bi lo hong sql injection
             $sql = "SELECT * FROM book WHERE id = $id";
-            echo $sql;
+            //echo $sql;
             $rs = $this->conn->query($sql);
             return $rs;
         }

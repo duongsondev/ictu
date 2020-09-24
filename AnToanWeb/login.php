@@ -15,6 +15,8 @@
                 setcookie("username", $username, time() + (86400 * 7), "/");
                 setcookie("passworld", $password, time() + (86400 * 7), "/");
                 header("Location: index.php");
+            }else{
+                echo $err;
             }
         }
     }

